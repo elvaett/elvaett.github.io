@@ -1,32 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elvaett</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #home {
+            display: block;
+            position:left;
+        }
+
+        #about {
+            display: none;
+            position:center;
+        }
+
+        section {
+            padding: 20px;
+            margin-top: 80px; /* Adjust margin to account for fixed header */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div id="site-title">
-            elvaett
-        </div>
         <nav>
             <ul>
-                <li><a href="#about-us">Om oss</a></li>
-                <!-- You can add more navigation items here -->
+                <li><a href="#home" id="home-link">elvaett</a></li>
+                <li><a href="#about" id="about-link">om oss</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about-us">
-        <h2>Om oss</h2>
-        <p>Welcome to our website. Learn more about us here.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
+    <section id="home">
         <p>We deliver IT solutions for the insurance industry.</p>
     </section>
 
+    <section id="about">
+        <p>Welcome to our website. Learn more about us here.</p>
+    </section>
+
+    <script>
+        document.getElementById('home-link').addEventListener('click', function () {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('about').style.display = 'none';
+        });
+
+        document.getElementById('about-link').addEventListener('click', function () {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('about').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
